@@ -39,8 +39,14 @@
                             </div>
                         </div>
                         <div class="form-group row">
+                            <label for="captcha" class="col-md-4 col-form-label text-md-right">{{ __('Captcha') }}</label>
                             <div class="col-md-6">
-                                <div class="g-recaptcha" data-sitekey="6Lf3Hi0aAAAAAGaZlDc-Xfzh1PrVOWoCG-cLyAfh" class="form-control"></div>
+                                <div class="g-recaptcha" name="g-recaptcha" data-sitekey="6Lf3Hi0aAAAAAGaZlDc-Xfzh1PrVOWoCG-cLyAfh" class="form-control"></div>
+                                @if ($errors->has('g-recaptcha-response'))
+                                    <span  style="display: block;color:red;">
+                                        <strong>{{$errors->first('g-recaptcha-response')}}</strong>
+                                    </span>
+                                @endif
                             </div>
 
                         </div>

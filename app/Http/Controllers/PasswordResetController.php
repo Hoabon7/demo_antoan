@@ -17,10 +17,10 @@ class PasswordResetController extends Controller
     {
         $request->validate([
             'email' => 'required|string|email',
-            'password' =>'required'
+            'password' =>'required',
+            'g-recaptcha-response' => 'required',
         ]);
         //$pass=bcrypt($request->password);
-        
        try {
             $user = User::where('email', $request->email)
                 //->where('password',$pass)
@@ -58,7 +58,6 @@ class PasswordResetController extends Controller
             [
                 ['token',$request->token],
                 ['email',$request->email],
-                
             ]
            )
             ->first();
