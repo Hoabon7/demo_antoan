@@ -41,7 +41,7 @@ class PasswordResetSuccess extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-        ->line('Ban thay đổi thành công.')
+        ->line('Ban thay đổi thành công.');
         // ->line('If you did change password, no further action is required.')
         // ->line('If you did not change password, protect your account.');
     }

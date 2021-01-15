@@ -2,7 +2,13 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CaptchaController;
 use App\Http\Controllers\PasswordResetController;
+
+
+use Arcanedev\NoCaptcha\Rules\CaptchaRule;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +35,6 @@ Route::post('/updateprofile',[App\Http\Controllers\HomeController::class, 'updat
 Route::post('create', [PasswordResetController::class,'create'])->name('create');
 Route::get('find/{email}/{token}', [PasswordResetController::class,'find']);
 Route::post('reset', [PasswordResetController::class,'reset'])->name('reset');
+
+
+
